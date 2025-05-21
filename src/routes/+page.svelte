@@ -1,2 +1,5 @@
-<h1>Start of website</h1>
-<p>Workflow</p>
+<script lang="ts">
+  import Navbar from "$lib/components/Navbar.svelte";
+</script>
+
+<Navbar />
