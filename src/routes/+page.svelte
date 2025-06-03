@@ -9,3 +9,4 @@
 <LandingCarrousel />
 <About />
 <Ordering />
+<div id="localizacao"></div>
