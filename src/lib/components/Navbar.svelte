@@ -34,7 +34,7 @@
   <NavigationMenu.Root class="mx-auto">
     <NavigationMenu.List class="container flex h-14 w-screen justify-between px-4">
       <NavigationMenu.Item class="flex font-bold">
-        <a href="/" rel="noreferrer noopener" class="flex text-xl font-bold items-center gap-2">
+        <a href={base} rel="noreferrer noopener" class="flex text-xl font-bold items-center gap-2">
           <Dessert color={pickRandom(colors)}/> <span>Cucas do Sul</span>
         </a>
       </NavigationMenu.Item>
