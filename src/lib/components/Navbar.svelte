@@ -4,6 +4,7 @@
   import * as Sheet from "$lib/components/ui/sheet";
   import { cn } from "$lib/utils";
   import Menu from "@lucide/svelte/icons/menu";
+  import Dessert from "@lucide/svelte/icons/dessert";
   import ModeToggle from "./ModeToggle.svelte";
 
   type RouteProps = {
@@ -12,11 +13,16 @@
   };
 
   const routeList = [
-    { href: "#features1", label: "Features I" },
-    { href: "#features2", label: "Features II" },
-    { href: "#features3", label: "Features III" },
-    { href: "#features4", label: "Features IV" },
+    { href: "#ofertas", label: "Ofertas" },
+    { href: "#sobre", label: "Sobre" },
+    { href: "#encomendas", label: "Encomendas" },
+    { href: "#localizacao", label: "Localização" },
   ] satisfies RouteProps[];
+
+  const colors = ["#e64553", "#df8e1d", "#40a02b", "#04a5e5", "#dd7878"] as const;
+  const pickRandom = <T extends readonly any[]>(arg: T): T[number] => {
+    return arg[Math.floor(Math.random() * arg.length)]
+  }
 
   let open = $state(false);
 </script>
@@ -25,9 +31,11 @@
   class="dark:bg-background sticky top-0 z-40 w-full border-b-[1px] bg-white dark:border-b-slate-700"
 >
   <NavigationMenu.Root class="mx-auto">
-    <NavigationMenu.List class="container flex h-14 justify-between px-4 w-screen">
+    <NavigationMenu.List class="container flex h-14 w-screen justify-between px-4">
       <NavigationMenu.Item class="flex font-bold">
-        <a href="/" rel="noreferrer noopener" class="ml-2 flex text-xl font-bold"> Cucas do Sul </a>
+        <a href="/" rel="noreferrer noopener" class="flex text-xl font-bold items-center gap-2">
+          <Dessert color={pickRandom(colors)}/> <span>Cucas do Sul</span>
+        </a>
       </NavigationMenu.Item>
 
       <!-- mobile -->
