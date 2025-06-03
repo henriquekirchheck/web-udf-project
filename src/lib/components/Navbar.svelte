@@ -6,6 +6,7 @@
   import Menu from "@lucide/svelte/icons/menu";
   import Dessert from "@lucide/svelte/icons/dessert";
   import ModeToggle from "./ModeToggle.svelte";
+  import { base } from '$app/paths';
 
   type RouteProps = {
     href: string;
@@ -54,7 +55,7 @@
             <nav class="mt-4 flex flex-col items-center justify-center gap-2">
               {#each routeList as { href, label } (label)}
                 <a
-                  {href}
+                  href={`${base}/${href}`}
                   onclick={() => (open = false)}
                   rel="noreferrer noopener"
                   class={buttonVariants({ variant: "ghost" })}
@@ -71,7 +72,7 @@
       <nav class="hidden gap-2 md:flex">
         {#each routeList as { href, label } (label)}
           <a
-            {href}
+            href={`${base}/${href}`}
             onclick={() => (open = false)}
             rel="noreferrer noopener"
             class={cn(buttonVariants({ variant: "ghost" }), "text-lg")}
